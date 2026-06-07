@@ -17,10 +17,31 @@ unsigned long long silnia(int n)
 int main()
 {
     int wybor;
+    int liczba;
 
     cout << "MENU\n";
+    cout << "1. Silnia\n";
     cout << "0. Wyjscie\n";
+
     cin >> wybor;
+
+    switch(wybor)
+    {
+        case 1:
+            cout << "Podaj liczbe: ";
+            cin >> liczba;
+
+            cout << "Silnia = "
+                 << silnia(liczba)
+                 << endl;
+            break;
+
+        case 0:
+            break;
+
+        default:
+            cout << "Niepoprawny wybor\n";
+    }
 
     return 0;
 }
