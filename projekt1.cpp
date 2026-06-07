@@ -14,6 +14,24 @@ unsigned long long silnia(int n)
     return wynik;
 }
 
+bool czyPierwsza(int n)
+{
+    if(n < 2)
+    {
+        return false;
+    }
+
+    for(int i = 2; i < n; i++)
+    {
+        if(n % i == 0)
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 int main()
 {
     int wybor;
@@ -21,6 +39,7 @@ int main()
 
     cout << "MENU\n";
     cout << "1. Silnia\n";
+    cout << "2. Sprawdz liczbe pierwsza\n";
     cout << "0. Wyjscie\n";
 
     cin >> wybor;
@@ -34,6 +53,19 @@ int main()
             cout << "Silnia = "
                  << silnia(liczba)
                  << endl;
+	    break;
+	case 2:
+	    cout << "Podaj liczbe: ";
+	    cin >> liczba;
+
+            if(czyPierwsza(liczba))
+            {
+                cout << "Liczba jest pierwsza\n";
+            }
+            else
+            {
+                cout << "Liczba nie jest pierwsza\n";
+            }
             break;
 
         case 0:
